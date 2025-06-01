@@ -1,0 +1,165 @@
+<head>
+<link type="style" href="new.css">
+</head>
+<body >
+<div class="div">
+<center>
+ <<marquee behavior="alternate" direction="left" > <h1 class="head">Find your Lucky Number</h1></marquee>
+<input type="text" id="name" placeholder="Enter your name" ><br>
+<h3>Digite of your Lucky Number</h3>
+<input list="table" id="digite" placeholder="Enter the digite of your Lucky Number">
+  <datalist id="table">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </datalist>
+</input><br>
+<button onclick="lucky()">Get Number</button>
+<h4 >Your Lucky Number is</h4>
+<p id="result"></p>
+</center>
+</div>
+</body>
+<style>
+
+  .div{
+    width: 30cm;
+    height:30cm;
+    color:black;
+  background-size: 30cm 30cm;
+  background-position: top;
+  background-repeat: no-repeat;
+  box-shadow: 20px 20px 10px gray;
+  animation-name: slider;
+  animation-duration: 10s;
+  animation-delay: linear;
+  animation-iteration-count: 10;
+  transition-duration:4s;
+}
+@keyframes slider
+{
+  0%{
+    background-image: url(/KJR/1.jpeg);
+  }
+  25% {
+    background-image: url(/KJR/2.jpeg);
+  }
+  50% {
+    background-image: url(/KJR/3.jpeg);
+  }
+  75% {
+    background-image: url(/KJR/4.jpg);
+  }
+  100% {
+    background-image: url(/KJR/5.jpeg);
+}
+}
+.head
+{
+  width: 2cm;
+  height: 4cm;
+  font-size: 2cm;
+  font-style:italic ;
+  color: yellow;
+  text-shadow: 4px 4px 2px lightcyan;
+}
+#name
+{
+  width: 8cm;
+  height:1.4cm;
+  font-style: italic;
+  color:red;
+  font-size: 0.6cm;
+  border-radius: 2cm;
+  outline-color: red;
+  outline-style: dashed;
+  outline-width: 0.1cm;
+  text-decoration-color:white;
+}
+#name:hover{
+  box-shadow: 0.2cm 0.2cm 0.3cm red;
+  
+}
+#digite
+{
+  width: 8cm;
+  height:1.4cm;
+  font-style: italic;
+  font-size: 0.6cm;
+  border-radius: 2cm;
+  outline-color: red;
+  outline-style: dashed;
+  outline-width: 0.1cm;
+  text-decoration-color:white;
+}
+#digite:hover{
+  box-shadow: 0.2cm 0.2cm 0.3cm red;
+}
+h3{
+  font-size: 0.8cm;
+  font-style:italic;
+  color: yellow;
+  text-shadow: 2px 2px 1px lightcyan;
+}
+h4{
+  font-size:1.2cm;
+  font-style: italic;
+  color: yellow ;
+}
+#result
+{
+  font-size:0.8cm;
+  font-style: italic;
+  color: yellow ;
+}
+button{
+  margin: 1cm;
+  width: 5cm;
+  height:1.5cm;
+  border-radius: 2cm;
+  background-color: royalblue;
+  font-size: 0.4cm;
+}
+button:hover
+{
+  background-color: indianred;
+}
+</style>
+<script>
+function lucky()
+  {
+  var a=document.getElementById("name").value
+  var b=document.getElementById("digite").value
+  var c=document.getElementById("result")
+    if(b==1)
+    {
+      var r1=Math.random()
+      var f1=Math.floor(r1*10)
+      c.textContent=Number(f1)
+    }
+    else if(b==2)
+    {
+      var r2=Math.random()
+      var f2=Math.floor(r2*100+1)
+      c.textContent=Number(f2)
+    }
+    else if(b==3)
+    {
+      var r3 = Math.random()
+      var f3 = Math.floor(r3*1000+10)
+      c.textContent=Number(f3)
+      
+    }
+    else if(b==4)
+    {
+      var r4 = Math.random()
+      var f4 = Math.floor(r4 * 10000+100)
+      c.textContent=Number(f4)
+    }
+    else
+    {
+      alert("Enter the valid digite Number")
+    }
+  }
+</script>
